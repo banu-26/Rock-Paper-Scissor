@@ -1,0 +1,288 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background: linear-gradient(135deg,
+            #08084b,
+            #11117a,
+            #08084b);
+
+    padding: 20px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.name {
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 10px rgba(253, 253, 253, 0.3);
+   
+}
+
+
+/* =========================
+   MOVE BUTTON
+========================= */
+
+
+.move-btn {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 8px;
+    margin-top: 25px;
+
+    background-color: transparent;
+
+    border: 2px solid white;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+
+
+/* Hover */
+
+.move-btn:hover {
+    transform: translateY(-8px) scale(1.05);
+
+    background-color: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+
+/* Click */
+
+.move-btn:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================
+   MOVE ICON
+========================= */
+
+.move-icon {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Icon animation */
+
+.move-btn:hover .move-icon {
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+    font-size: 30px;
+    font-weight: bold;
+
+    margin-top: 35px;
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    min-height: 36px;
+
+    animation: resultAnimation 0.4s ease;
+}
+
+
+/* =========================
+   MOVES
+========================= */
+
+.moves {
+    min-height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    font-size: 17px;
+
+    color: #dcdcff;
+
+    text-align: center;
+}
+
+
+/* Images inside moves */
+
+.moves .move-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-top: 30px;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.reset-btn {
+    margin-top: 25px;
+
+    padding: 10px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    color: #08084b;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+
+    background-color: #ddddff;
+
+    box-shadow:
+        0 5px 15px rgba(255, 255, 255, 0.25);
+}
+
+
+.reset-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   RESULT ANIMATION
+========================= */
+
+@keyframes resultAnimation {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .name {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .move-btn {
+        width: 90px;
+        height: 90px;
+
+        margin: 0 4px;
+    }
+
+    .move-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .result {
+        font-size: 25px;
+    }
+
+    .moves {
+        font-size: 14px;
+    }
+
+    .score {
+        font-size: 17px;
+    }
+
+}
